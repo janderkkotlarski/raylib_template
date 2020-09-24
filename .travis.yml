@@ -6,7 +6,10 @@ install:
   - sudo apt install libasound2-dev mesa-common-dev libx11-dev libxrandr-dev libxi-dev xorg-dev libgl1-mesa-dev libglu1-mesa-dev
   # Install Raylib
   - ./install_raylib.sh
+  - cd raylib/src/ ; sudo make install RAYLIB_LIBTYPE=SHARED ; cd ../..
   - cd raylib/src/ ; sudo make install ; cd ../..
+  # Locate libGL
+  - locate libGL | egrep "^/usr/.*64.*/libGL\."
 
 
 script:
