@@ -9,7 +9,7 @@ install:
   - cd raylib/src/ ; sudo make install RAYLIB_LIBTYPE=SHARED ; cd ../..
   - cd raylib/src/ ; sudo make install ; cd ../..
   # Locate libGL
-  - locate libGL | egrep "^/usr/.*64.*/libGL\."
+  #- locate libGL | egrep "^/usr/.*64.*/libGL\."
 
 
 script:
