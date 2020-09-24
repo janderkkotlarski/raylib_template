@@ -1,0 +1,15 @@
+language: cpp
+dist: bionic
+
+install: 
+  # From https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux
+  - sudo apt install libasound2-dev mesa-common-dev libx11-dev libxrandr-dev libxi-dev xorg-dev libgl1-mesa-dev libglu1-mesa-dev
+  # Install Raylib
+  - ./install_raylib.sh
+  - cd raylib/src/ ; sudo make install ; cd ../..
+
+
+script:
+  - qmake
+  - make
+  - ./travis_qmake_clang_cpp14
